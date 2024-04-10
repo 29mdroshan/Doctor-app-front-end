@@ -1,0 +1,41 @@
+<!-- <div class="search-container ">
+    <div class="col-sm-6">
+            <input type="text" [(ngModel)]="searchValue" ngModel class="form-control" id="search" placeholder="Search..">
+            <button type="submit"><i class="fa fa-search"></i></button>
+    </div>
+</div> -->
+
+
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <div class="d-flex" role="search">
+        <input type="text" [(ngModel)]="searchValue" ngModel class="form-control" id="search" placeholder="Search..">
+        <button class="btn btn-outline-dark" type="submit"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </nav>
+
+
+<table  class="table table-striped table-hover">
+    <thead>
+        <th>Patient Id</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Email Id</th>
+        <th>Phone</th>
+        <th>Address</th>
+    </thead>
+    <tbody *ngIf="patients">
+        <tr *ngFor="let i of patients |searchFilter:searchValue">
+            <td>{{i.userId}}</td>
+            <td>{{i.userName}}</td>
+            <td>{{i.userGender}}</td>
+            <td>{{i.userAge}}</td>
+            <td>{{i.userEmail}}</td>
+            <td>{{i.userPhone}}</td>
+            <td>{{i.userAddress}}</td>
+        
+        </tr>
+    </tbody>
+</table>

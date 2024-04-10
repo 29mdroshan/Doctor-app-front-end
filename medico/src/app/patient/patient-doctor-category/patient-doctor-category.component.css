@@ -1,0 +1,23 @@
+.home-section .home-content{
+    position: relative;
+    padding-top: 0px;
+    display: inline-block;
+}
+.container{
+    padding-top: 6%;
+    text-align: center;
+    padding-left: 5%;
+    width: 100%;  
+}
+.card{
+    width: 250px;
+    border-radius: 20px;
+    border: 2px groove aquamarine;
+    margin-right: 5%;
+  
+}
+.card img{
+    border-radius: 20px; 
+    width: 250px;
+    height: 160px;
+}

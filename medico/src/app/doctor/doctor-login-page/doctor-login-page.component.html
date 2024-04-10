@@ -1,0 +1,41 @@
+<h3>Doctor</h3>
+<div class="container p-5 distance">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card my-card">
+                
+                <div class="card-body login">
+                    <h2>Sign In</h2>
+                    <img src="assets/image1.jpg" class="center">
+
+                    <form   action='register()' #patientLogin="ngForm">
+                        <div class="mb-3">
+                          <input  ngModel required name="username" id="username" type="text" #t_username="ngModel" placeholder="Enter username" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                         <input ngModel required name="password" id="passowrd" type="password" #t_password="ngModel" placeholder="Enter password" class="form-control">
+                        </div>
+
+                        <div class="textLeft">
+                            <!-- Don't have a account? <a routerLink="user-register">Click Here</a><br> --> 
+                            Don't have a account? <a routerLink="/doctor-registration">Click Here</a><br> 
+
+                            Forgot Password <a href="#">Click Here</a>
+                       </div>
+                        <!-- <div class="textLeft">
+                             Don't have a account? <a routerLink="user-register">Click Here</a><br>
+                             Forgot Password <a href="#">Click Here</a>
+                        </div> -->
+                        <button type="submit" class="btn btn-primary" (click)="register()">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

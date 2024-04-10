@@ -1,0 +1,149 @@
+*{
+  box-sizing: border-box;
+}
+.image{
+  width: 70%;
+  border-radius: 4px;
+  resize: vertical;
+  display: block;
+  margin: auto;
+  margin-top: 0px;
+}
+.image label{
+  margin-top: 10%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+input[type=text], input[type=password] ,input[type=email] ,input[type=number]{
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+}
+.display{
+  width: 70%;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+input[type=submit]:hover {
+  background-color: #45A049;
+}
+.container {
+  border-radius: 5px;
+  background-color: #F7F4F4;
+  padding: 20px;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.form-group p{
+  padding-left: 16%;
+}
+form .category{
+  width: 100%;
+}
+form .gender-details .gender-title{
+  font-size:16px;;
+  font-weight: 500;
+  margin-left: 4%;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   margin-left: 2%;
+   justify-content:center;
+ }
+ form .category label{
+   display: flex;
+   align-items:right;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 20px;
+  background: #D9D9D9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #0C413C;
+   border-color: #D9D9D9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+   
+   @media(max-width: 584px){
+   .container{
+    max-width: 100%;
+  }
+  form .user-details .input-box{
+      margin-bottom: 15px;
+      width: 100%;
+    }
+    .content form .user-details{
+      max-height: 300px;
+      overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+      width: 5px;
+    }
+    }
+    @media(max-width: 459px){
+    .container .content .category{
+      flex-direction: column;
+    }
+  }
+  .close{
+    font-size: 40px;
+    float: right;
+    color: rgb(3, 3, 3);
+    margin-right: 5%;
+   }
+
+
+   button{
+  
+    margin: auto;
+    display: flex;
+    margin-top: 3%;
+    width: 20%;
+    padding-left: 6%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+   }
+
+
+
+
+
+

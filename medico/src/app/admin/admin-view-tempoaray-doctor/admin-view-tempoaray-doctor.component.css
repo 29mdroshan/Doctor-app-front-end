@@ -1,0 +1,17 @@
+button{
+    background-color: black;
+}
+i{
+    color: white;
+}
+nav{
+    margin-left: 70%;
+}
+@media (max-width: 700px) {
+    nav{
+        margin-left:5%;
+    
+    }
+    }
+     
+    

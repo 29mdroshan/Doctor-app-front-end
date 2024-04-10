@@ -1,0 +1,16 @@
+<div class="home-content" *ngIf="doc">
+    <div class="container">
+        <div class="col">
+            <div class="card">
+                <img src="{{doc.doctorImage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{doc.doctorName}}</h5>
+                    <p class="card-text">{{doc.doctorSpeciality}}<br>{{doc.doctorQualification}}</p>
+                    
+                    <a routerLink="{{doc.doctorId}}" class="btn
+                        btn-primary">Book Appointment</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

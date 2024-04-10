@@ -1,0 +1,49 @@
+<body>
+    <div class="main-block">
+      <form (submit)="save(prescriptionForm.value)" #prescriptionForm="ngForm">
+        <div>
+          <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                <img src="/assets/12.jpg" width="200px" height="300px">
+              </div>
+              <div class="col">
+                <h1>Prescription</h1>
+                <div class="info">
+                  <input ngModel required type="number" name="doctorId" id="doctorId" placeholder="Doctor Id" #t_dId="ngModel"
+                    class="form-control" [class.is-invalid]="t_dId.touched && t_dId.invalid"
+                    [class.is-valid]="t_dId.valid">
+                  <p *ngIf="t_dId.invalid && t_dId.touched" class="text-danger">
+                    <small *ngIf="t_dId.errors?.['required']">ID Is Required</small>
+                  </p>
+                  <input ngModel required type="number" name="userId" id="userId" placeholder="Patient Id" #t_pId="ngModel"
+                    class="form-control" [class.is-invalid]="t_pId.touched && t_pId.invalid"
+                    [class.is-valid]="t_pId.valid">
+                  <p *ngIf="t_pId.invalid && t_pId.touched" class="text-danger">
+                    <small *ngIf="t_pId.errors?.['required']">ID Is Required</small>
+                  </p>
+                  <input ngModel required minlength="3" pattern="[a-zA-Z\s]+" type="text" class="form-control"
+                    placeholder="Patient Name" #t_pName="ngModel" name="userName" id="userName" [class.is-valid]="t_pName.valid"
+                    [class.is-invalid]="t_pName.touched && t_pName.invalid">
+                  <p *ngIf="t_pName.invalid && t_pName.touched" class="text-danger">
+                    <small *ngIf="t_pName.errors?.['required']">Name Is Required</small>
+                    <small *ngIf="t_pName.errors?.['pattern']">Invalid Pattern</small><br>
+                    <small *ngIf="t_pName.errors?.['minlength']">Name should be atleast 3 letters</small>
+                  </p>
+                  <input ngModel required type="text" name="disease" id="disease" placeholder="Disease"
+                    class="form-control" #t_disease="ngModel" [class.is-valid]="t_disease.valid"
+                    [class.is-invalid]="t_disease.touched && t_disease.invalid">
+                  <p *ngIf="t_disease.invalid && t_disease.touched" class="text-danger">
+                    <small *ngIf="t_disease.errors?.['required']">Required</small>
+                  </p>
+                  <input  name="prescription"  id="prescription" type="text" required ngModel form="usrform" class="form-control">
+                </div>
+                <button class="btn btn-info" [disabled]="prescriptionForm.invalid">Prescription</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+  

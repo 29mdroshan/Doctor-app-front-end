@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 img">
+        <img src="{{data.name[0].doctorImage}}"  alt="" class="img-rounded">
+      </div>
+      <div class="col-md-6 details">
+        <blockquote>
+          <h3>{{data.name[0].doctorName}}</h3>
+          <h6>{{data.name[0].doctorAge}},&emsp; {{data.name[0].doctorGender}}</h6>
+          <small><cite title="Source Title">{{data.name[0].doctorAddress}}  <i class="icon-map-marker"></i></cite></small>
+        </blockquote>
+        <p>
+          {{data.name[0].doctorEmail}} <br>
+          {{data.name[0].doctorPhone}} <br>
+          {{data.name[0].doctorQualification}}<br>
+          {{data.name[0].doctorSpeciality}}<br>
+        </p>
+      </div>
+    </div>
+  </div>

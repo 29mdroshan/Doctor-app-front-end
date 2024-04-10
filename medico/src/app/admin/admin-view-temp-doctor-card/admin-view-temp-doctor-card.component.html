@@ -1,0 +1,15 @@
+<div class="home-content" *ngIf="doc">
+    <div class="container">
+        <div class="col">
+            <div class="card">
+                <img src="{{doc.doctorImage}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{doc.doctorName}}</h5>
+                    <p class="card-text">{{doc.doctorSpeciality}}<br>{{doc.doctorQualification}}</p>
+                    <button class="btn btn-primary" style="margin-right: 5px;" (click)="openDialog()"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                    <a (click)="verifyDoctor(doc)" class="btn btn-primary">Verify Doctor</a><button class="btn btn-danger" style="margin-left: 5px;" (click)="deleteDoctor(doc.doctorPhone)"><i class="fa fa-window-close-o" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

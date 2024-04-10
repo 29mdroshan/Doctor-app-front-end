@@ -1,0 +1,110 @@
+<form (submit)="userLogin(userForm.value)" #userForm="ngForm">
+    <div class="container display">
+        <div class="close"><i class="fa fa-times-circle-o" aria-hidden="true" routerLink="/patient-login"></i></div>
+      <h1>Patient Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+      <div class="container">
+            <div class="article">
+            <div class="form-group">
+                <!-- <label for="">User Name</label> -->
+                <input ngModel required minlength="3" pattern="[a-zA-z\s]+" placeholder="Enter Full Name"
+                    class="form-control" type="text" #t_userName="ngModel" name="userName" id="userName"
+                    [class.is-invalid]="t_userName.invalid && t_userName.touched" [class.is-valid]="t_userName.valid">
+                <p *ngIf="t_userName.touched && t_userName.invalid" class="text-danger">
+                    <small *ngIf="t_userName.errors?.['required']" class="text-danger">Name is Required</small>
+                    <small *ngIf="t_userName.errors?.['minlength']" class="text-danger">Name should have atleast 3
+                        characters</small>
+                    <small *ngIf="t_userName.errors?.['pattern']" class="text-danger">Name Cannot Contain Special
+                        Characters</small>
+                </p>
+            </div>
+            <div class="form-group rbutton">
+                <input type="radio" name="userGender" id="g1male" value="male" class="rinput" ngModel>Male
+                <input type="radio" name="userGender" id="g1female" value="female" class="rinput" ngModel>Female
+                <input type="radio" name="userGender" id="g1other" value="other" class="rinput" ngModel>Other
+            </div>
+            <div class="form-group">
+                <!-- <label for="">Age</label> -->
+                <input ngModel required min="0" class="form-control" placeholder="Enter Age" type="number" #t_age="ngModel"
+                    name="userAge" id="userAge" [class.is-invalid]="t_age.invalid && t_age.touched"
+                    [class.is-valid]="t_age.valid">
+                <p *ngIf="t_age.touched && t_age.invalid" class="text-danger">
+                    <small *ngIf="t_age.errors?.['required']" class="text-danger">Age Is Required</small>
+                    <small *ngIf="t_age.errors?.['min']" class="text-danger">Age should be greater than 0</small>
+                </p>
+            </div>
+            <div class="form-group">
+                <!-- <label for="">Email</label> -->
+                <input ngModel required email class="form-control" placeholder="Enter Email Id" type="email"
+                    #t_email="ngModel" name="userEmail" id="userEmail" [class.is-invalid]="t_email.invalid && t_email.touched"
+                    [class.is-valid]="t_email.valid">
+                <p *ngIf="t_email.touched && t_email.invalid" class="text-danger">
+                    <small *ngIf="t_email.errors?.['required']" class="text-danger">Email Required</small>
+                    <small *ngIf="t_email.errors?.['email']" class="text-danger">Invalid Email</small>
+                </p>
+            </div>
+            <div class="form-group">
+                <!-- <label for="">Address</label> -->
+                <input ngModel required class="form-control" placeholder="Enter Address" type="text"
+                    #t_userAddress="ngModel" name="userAddress" id="userAddress"
+                    [class.is-invalid]="t_userAddress.invalid && t_userAddress.touched"
+                    [class.is-valid]="t_userAddress.valid">
+                <p *ngIf="t_userAddress.touched && t_userAddress.invalid" class="text-danger">
+                    <small *ngIf="t_userAddress.errors?.['required']" class="text-danger">Address is Required</small>
+                </p>
+            </div>
+            <div class="form-group">
+                <!-- <label for="">Mobile</label> -->
+                <input ngModel required maxlength="10" pattern="\d{10}" placeholder="Enter Mobile Number"
+                    class="form-control" type="number" #t_phone="ngModel" name="userPhone" id="phone"
+                    [class.is-invalid]="t_phone.invalid && t_phone.touched" [class.is-valid]="t_phone.valid">
+                <p *ngIf="t_phone.touched && t_phone.invalid" class="text-danger">
+                    <small *ngIf="t_phone.errors?.['required']" class="text-danger">Phone Number Is Required</small>
+                    <small *ngIf="t_phone.errors?.['maxlength']" class="text-danger">Phone Number cannot exceed 10
+                        digits</small>
+                    <small *ngIf="t_phone.errors?.['pattern']" class="text-danger">Invalid Phone Number</small>
+                </p>
+            </div>
+            <div class="form-group">
+                <!-- <label for="">User Name</label> -->
+                <input ngModel required minlength="3" class="form-control" placeholder="Enter User Name" type="text"
+                    #t_userName1="ngModel" name="userName1" id="userName1"
+                    [class.is-invalid]="t_userName1.invalid && t_userName1.touched" [class.is-valid]="t_userName1.valid">
+                <p *ngIf="t_userName1.touched && t_userName1.invalid" class="text-danger">
+                    <small *ngIf="t_userName1.errors?.['required']" class="text-danger">UserName is Required</small>
+                    <small *ngIf="t_userName1.errors?.['minlength']" class="text-danger">UserName should have atleast 3
+                        characters</small>
+                </p>
+            </div>
+            <div class="form-group">
+                <!-- <label for="">Password</label> -->
+                <input ngModel type="password" id="password" name="password" placeholder="Enter Password" class="form-control"
+                    required minlength="8" #t_password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                    [class.is-invalid]="t_password.invalid && t_password.touched" [class.is-valid]="t_password.valid">
+                <p *ngIf="t_password.touched && t_password.invalid" class="text-danger">
+                    <small *ngIf="t_password.errors?.['required']" class="text-danger">Password is Required</small>
+                    <small *ngIf="t_password.errors?.['minlength']" class="text-danger">Password should have atleast 8
+                        characters</small>
+                    <small *ngIf="t_password.errors?.['pattern']" class="text-danger">Invalid Password</small>
+                </p>
+            </div>
+            <!-- <div class="form-group">
+               
+                <input ngModel type="password" id="psw1" name="psw1" placeholder="Re-Enter Password " class="form-control"
+                    required minlength="8" #t_password1="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    [class.is-invalid]="t_password1.invalid && t_password1.touched" [class.is-valid]="t_password1.valid">
+                <p *ngIf="t_password1.touched && t_password1.invalid" class="text-danger">
+                    <small *ngIf="t_password1.errors?.['required']" class="text-danger">Password is Required</small>
+                    <small *ngIf="t_password1.errors?.['minlength']" class="text-danger">Password should have atleast 8
+                        characters</small>
+                    <small *ngIf="t_password1.errors?.['pattern']" class="text-danger">Invalid Password</small>
+                </p>
+            </div> -->
+            <button  [disabled]="userForm.invalid" class="btn btn-success">Register</button>
+           
+        </div>
+        </div>
+     </div>
+  </form>

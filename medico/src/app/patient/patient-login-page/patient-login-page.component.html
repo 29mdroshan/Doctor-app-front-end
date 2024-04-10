@@ -1,0 +1,41 @@
+<div class="box">
+    
+    <div class="container p-4 distance">
+        <div class="row">
+            <div class="col-md-5 offset-md-3 loginCard">
+                <div class="card my-card">
+                    <!-- <div class="close"><i class="fa fa-times-circle-o" aria-hidden="true"></i></div> -->
+                    
+                    <div class="card-body login">
+                        <div class="close"><i class="fa fa-times-circle-o" aria-hidden="true" routerLink="/home"></i></div>
+                        <h2>Sign In</h2>
+                        <img src="assets/patient1.jpg" class="center">
+    
+                        <form   (submit)='login(loginForm.value)' #loginForm="ngForm">
+                            <div class="mb-3">
+                              <input  ngModel required name="username" id="username" type="text" #t_username="ngModel" placeholder="Enter username" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                             <input ngModel required name="password" id="password" type="password" #t_password="ngModel" placeholder="Enter password" class="form-control">
+                            </div>
+                            <div class="textLeft">
+                                 <!-- Don't have a account? <a routerLink="user-register">Click Here</a><br> --> 
+                                 Don't have an account?  <br>
+                                 <i class="fa fa-user" aria-hidden="true"></i> Register as Patient <a routerLink="/patient-register" >Click Here</a><br>
+                                 <i class="fa fa-user-md" aria-hidden="true"></i> Register as Doctor <a routerLink="/doctor-registration" >Click Here</a><br>
+                            </div>
+                            <button type="submit" class="btn btn-primary" >Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

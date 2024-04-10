@@ -1,0 +1,61 @@
+<div class="container">
+    
+    <div class="row">
+      <div class="col-md-5 img" >
+        <img src="{{doc?.doctorImage}}"  alt="" class="img-rounded">
+      </div>
+      
+      <div class="col-md-6 details">
+        <button mat-raised-button (click)="openDialog()">Edit</button>
+        <div class=" col-md-9 col-lg-9 ">
+            <table class="table table-user-information">
+                <tbody>
+                    <tr>
+                        <td>Id</td>
+                        <td>{{doc?.doctorId}}</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{doc?.doctorName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>{{doc?.doctorAge}}</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>{{doc?.doctorGender}}</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>{{doc?.doctorAddress}}</td>
+                    </tr>
+                    <tr>
+                        <td>Qualification</td>
+                        <td>{{doc?.doctorQualification}}</td>
+                    </tr>
+                    <tr>
+                        <td>Specialization</td>
+                        <td>{{doc?.doctorSpeciality}}</td>
+                    </tr>
+                    <!-- <tr>
+                        <td>Experience</td>
+                        <td>{{doc.experience}}</td>
+                    </tr> -->
+                    <tr>
+                        <td>Contact</td>
+                        <td>{{doc?.doctorPhone}}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><a href="mailto:info@support.com">{{doc?.doctorEmail}}</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+

@@ -1,0 +1,55 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-lg-4 col-auto col-md-3 col-xl-2 px-sm-2 px-0 bar">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                <h2 class="fs-3 d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none admintext">
+                    <span class=" d-none d-sm-inline atext"><i class="fa fa-user-plus" aria-hidden="true"></i>User</span>
+                </h2>
+                <hr class="someClass">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                  <li class="nav-item">
+                    <a routerLink="My-Profile" class="nav-link align-middle px-0">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                         <span class="ms-1 d-none d-sm-inline">My Profile</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="main-booking" class="nav-link align-middle px-0">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i>
+                         <span class="ms-1 d-none d-sm-inline">Book Appointment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="patient-manage-appt" class="nav-link align-middle px-0">
+                   <i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+                       <span class="ms-1 d-none d-sm-inline">Prescriptions</span>
+                  </a>
+              </li>
+                    <li class="nav-item">
+                        <a routerLink="patient-view-app" class="nav-link align-middle px-0">
+                            <i class="fa fa-history" aria-hidden="true"></i>
+                             <span class="ms-1 d-none d-sm-inline">Appointment History</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a (click)="logout()" class="nav-link align-middle px-0">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                             <span class="ms-1 d-none d-sm-inline">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col py-3 content ">
+            <div class="content1">
+                <div class="aname">
+                  <img src="assets/admin.jpg">
+                  <h5>{{_loginAuthClient.getUsername()}}</h5>
+                </div>
+              </div>
+              <div class="content2">
+                <router-outlet></router-outlet>
+              </div>
+        </div>
+    </div>
+  </div>

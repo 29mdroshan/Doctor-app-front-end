@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+  }
+  input[type=text], input[type=password] ,input[type=email] ,input[type=number]{
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    display: block;
+    margin: auto;
+    margin-top: 15px;
+  }
+  .display{
+    width: 70%;
+  }
+  .rbutton{
+    padding-left: 15%;
+    padding-top: 10px;
+  }
+  .rinput{
+    margin: 2%;
+  }
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+
+ 
+  .container {
+    border-radius: 5px;
+    background-color: #F2F2F2;
+    padding: 20px;
+  }
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .form-group p{
+    padding-left: 16%;
+  }
+  form .button{
+    height: 45px;
+    width: 50%;
+    margin: 50px ;
+    margin-right:60%;
+  }
+  button{
+  
+    margin: auto;
+    display: flex;
+    margin-top: 3%;
+    width: 20%;
+    padding-left: 6%;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+   }
+  form .button input:hover{
+   /* transform: scale(0.99); */
+   background: linear-gradient(-135deg, #90F1D4, #0B5A48);
+   }
+
+   .close{
+    font-size: 40px;
+    float: right;
+    color: rgb(58, 57, 57);
+    margin-right: 5%;
+   }
+
+
+
+
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+
+

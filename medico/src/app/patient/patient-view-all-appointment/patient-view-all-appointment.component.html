@@ -1,0 +1,33 @@
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead>
+            <th>Appointment Id</th>
+            <th>User Id</th>
+            <th>User Name</th>
+            <th>User email</th>
+            <th>Appointment Date</th>
+            <th>Appointment Time</th>
+            <th>Symptoms</th>
+            <th>Doctor Id</th>
+            <th>Doctor Name</th>
+            <th>Cancel</th>
+
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of appointment">
+                <td>{{i?.appId}}</td>
+                <td>{{i?.userId}}</td>
+                <td>{{i?.userName}}</td>
+                <td>{{i?.userEmail}}</td>
+                <td>{{i?.appDate}}</td>
+                <td>{{i?.appTime}}</td>
+                <td>{{i?.userSymptoms}}</td>
+                <td>{{i?.doctorId}}</td>
+                <td>{{i?.doctorName}}</td>
+                <td><button class="btn btn-outline-danger" (click)="delete(i)">cancel</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+</div>

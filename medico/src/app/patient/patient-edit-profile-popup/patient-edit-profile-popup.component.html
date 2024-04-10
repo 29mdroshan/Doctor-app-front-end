@@ -1,0 +1,83 @@
+<div class="container">
+    <button class="btn btn-danger" style="height: 30px; width: 50px;" [mat-dialog-close]="true">Close</button>
+    <div class="content">
+        <form  (submit)="updatePatient(userForm.value)" #userForm="ngForm" >
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details">Name</span>
+                    <input ngModel [(ngModel)]="data.name[0].userName" required minlength="3" pattern="[a-zA-z\s]+" placeholder="Enter Full Name"
+                        class="form-control" type="text" #t_name="ngModel" name="userName" id="userName"
+                        >
+                    <p *ngIf="t_name.touched && t_name.invalid" class="text-danger">
+                        <small *ngIf="t_name.errors?.['required']" class="text-danger">Name is Required</small>
+                        <small *ngIf="t_name.errors?.['minlength']" class="text-danger">Name should have atleast 3
+                            characters</small>
+                        <small *ngIf="t_name.errors?.['pattern']" class="text-danger">Name Cannot Contain Special
+                            Characters</small>
+                    </p>
+                </div>
+
+                <div class="gender-details" >
+                    <input type="radio" ngModel [(ngModel)]="data.name[0].userGender" name="userGender"  value="male" id="dot-1">
+                    <input type="radio" ngModel [(ngModel)]="data.name[0].userGender" name="userGender" value="female" id="dot-2">
+                    <input type="radio" [(ngModel)]="data.name[0].userGender" ngModel name="userGender" value="other" id="dot-3">
+               
+                    <div class="category">
+                      <label for="dot-1">
+                      <span class="dot one"></span>
+                      <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                      <span class="dot two"></span>
+                      <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-3">
+                      <span class="dot three"></span>
+                      <span class="gender">Other</span>
+                      </label>
+                    </div>
+                  </div>
+                <div class="input-box">
+                    <span class="details">Age</span>
+                    <input ngModel required min="0" class="form-control" placeholder="Enter Age" type="text"
+                        #t_age="ngModel" name="userAge" id="userAge" [(ngModel)]="data.name[0].userAge">
+                    <p *ngIf="t_age.touched && t_age.invalid" class="text-danger">
+                        <small *ngIf="t_age.errors?.['required']" class="text-danger">Age Is Required</small>
+                        <small *ngIf="t_age.errors?.['min']" class="text-danger">Age should be greater than 0</small>
+                    </p>
+                </div>
+                <div class="input-box">
+                    <span class="details">Email</span>
+                    <input ngModel required email class="form-control" placeholder="Enter Email Id" type="email"
+                        #t_email="ngModel" name="userEmail" id="userEmail" [(ngModel)]="data.name[0].userEmail">
+                    <p *ngIf="t_email.touched && t_email.invalid" class="text-danger">
+                        <small *ngIf="t_email.errors?.['required']" class="text-danger">Email is Required</small>
+                        <small *ngIf="t_email.errors?.['email']" class="text-danger">Invalid Email</small>
+                    </p>
+                </div>
+                <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input ngModel required min="0" class="form-control" placeholder="Enter Phone Number" type="text"
+                        #t_phone="ngModel" name="userPhone" id="userPhone" [(ngModel)]="data.name[0].userPhone">
+                    <p *ngIf="t_phone.touched && t_phone.invalid" class="text-danger">
+                        <small *ngIf="t_phone.errors?.['required']" class="text-danger">Phone Number is Required</small>
+                    </p>
+                </div>
+                <div class="input-box">
+                    <span class="details">Address</span>
+                    <input ngModel required class="form-control" placeholder="Enter Address" type="text"
+                        #t_userAddress="ngModel" name="userAddress" id="userAddress"
+                        [(ngModel)]="data.name[0].userAddress">
+                    <p *ngIf="t_userAddress.touched && t_userAddress.invalid" class="text-danger">
+                        <small *ngIf="t_userAddress.errors?.['required']" class="text-danger">Address is
+                            Required</small>
+                    </p>
+                </div>
+                <div class="save">
+                    <button [disabled]="userForm.invalid">Save</button>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

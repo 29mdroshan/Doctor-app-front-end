@@ -1,0 +1,51 @@
+{
+    "docinfo":[
+      {
+          "id":1000,
+          "doctorName":"Dr.Fiza Mariam",
+          "doctorSpec":"Cardiologist",
+          "docExp":"5 Years"
+      },
+      {
+          "id":1001,
+          "doctorName":"Dr.Mohammed Roshan",
+          "doctorSpec":"Neurologist",
+          "docExp":"6 Years"
+      },
+      {
+          "id":1002,
+          "doctorName":"Dr.Kusuma K Y",
+          "doctorSpec":"General Physician",
+          "docExp":"8 Years"
+      },
+      {
+          "id":1003,
+          "doctorName":"Dr.Yashwanth H R",
+          "doctorSpec":"Urologist",
+          "docExp":"4 Years"
+      },
+      {
+          "id":1004,
+          "doctorName":"Dr.Umesh Rao",
+          "doctorSpec":"Gynaecologist",
+          "docExp":"4 Years"
+      },
+      {
+          "id":1005,
+          "doctorName":"Dr.Prashanth Kumar",
+          "doctorSpec":"ENT",
+          "docExp":"4 Years"
+      }
+  ]
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

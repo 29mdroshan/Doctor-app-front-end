@@ -1,0 +1,67 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col">
+            <div class="container-pic col d-flex justify-content-center block" *ngIf="doctor">
+                <div class="card" style="width: 22rem;">
+                    <img src="{{doctor.doctorImage}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h3 class="card-header">Dr.&ensp;{{doctor.doctorName}}</h3>
+                        <p class="card-text">Book your appointment with <b>Dr.{{doctor.doctorName}}</b> who is specialied in <b>{{doctor.doctorSpeciality}}</b></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="container-form">
+                <form (submit)="bookApp(appForm.value)" #appForm="ngForm">
+                    <h2>Book Appointment</h2>
+                    <div class="form-field">
+                        <!-- <label>Full Name</label> -->
+                        <input ngModel   value="{{patient?.userId}}" id="userId" name="userId" type="number" placeholder="Enter Your ID" >
+                    </div>
+                    <div class="form-field">
+                        <!-- <label>Full Name</label> -->
+                        <input ngModel   value="{{patient?.userName}}"  id="userName" name="userName" type="text" placeholder="Enter Your Name">
+                    </div>
+                    <div class="form-field">
+                        <!-- <label>Email</label> -->
+                        <input ngModel   value="{{patient?.userEmail}}" id="userEmail" name="userEmail" type="email" placeholder="Enter Email ID">
+                    </div>
+                    <div class="form-field">
+                        <!-- <label>Appointment Time</label> -->
+                        <input ngModel required id="userSymptoms" name="userSymptoms" #t_symtoms="ngModel" type="text" placeholder="Symptoms">
+                        <p *ngIf="t_symtoms.invalid && t_symtoms.touched" class="text-danger">
+                            <small *ngIf="t_symtoms.errors?.['required']">Symptoms are Required</small>
+                          </p>
+                    </div>
+                    <div class="form-field">
+                        <!-- <label>Appointment Date</label> -->
+                        <input ngModel required id="appDate" min="2023-01-12" name="appDate" type="date" #t_appDate="ngModel" (change)="fetchSlotsById(t_appDate.value)">
+                    </div>
+                    
+                    <input type="hidden"  id="appTime" name="appTime" ngModel required [(ngModel)]="_bookTimeSlotClient.bookSlot.timeslot" >
+                    <div class="calender" *ngIf="timeSlots">
+                        <div   *ngFor="let i of timeSlots.doctorSlots ">
+                            <app-patient-booking-slot [slot]="i"></app-patient-booking-slot>
+                        </div>
+                    </div>
+                    <button [disabled]="appForm.invalid">Book Appointment</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- {{timeSlots|json}} -->
+</div>
+<!-- <div class="calender">
+    <div *ngFor="let i of timeSlots">
+        <div class="box">
+            {{i}}
+        </div>
+    </div>
+</div> -->
+
+
+
+

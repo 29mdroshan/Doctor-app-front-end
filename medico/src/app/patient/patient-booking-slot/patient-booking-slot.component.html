@@ -1,0 +1,2 @@
+<button class="box"  [disabled]="slot.status=='SLOTBOOKED' || textStyle=='red'" [ngStyle]="{'background-color':slot.status=='SLOTBOOKED'?'black':'green' ,'color':_bookSlotClient.bookSlot.timeslot==slot.timeslot?'red':'white'}"  (click)="changeSlot(slot)" >{{slot.timeslot}}</button>
+<!-- <button (click)="delete()">hello</button> -->

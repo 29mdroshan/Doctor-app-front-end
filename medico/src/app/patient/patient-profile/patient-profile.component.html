@@ -1,0 +1,44 @@
+<body>
+    <h3 style="text-align:center">User Profile</h3>
+    <div class="card">
+        <table class="table table-user-information">
+            <tbody>
+                <button mat-raised-button (click)="openDialog()"> Edit </button>
+                <tr>
+                    <td>User ID</td>
+                    <td>{{patient?.userId}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{patient?.userName}}</td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td>{{patient?.userAge}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>{{patient?.userGender}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{patient?.userEmail}}</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>{{patient?.userAddress}}</td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>{{patient?.userPhone}}</td>
+                </tr>
+                <tr>
+                    <td>User Name</td>
+                    <td>{{patient?.userName1}}</td>
+                </tr>
+                <br>
+                <button type="save" class="btn btn-primary"> Save </button>
+            </tbody>
+        </table>
+    </div>
+    </body>

@@ -1,0 +1,159 @@
+<form class="form-group" (submit)="saveDoctor(doctorForm.value)" #doctorForm="ngForm">
+  <div class="container display">
+    <div class="close"><i class="fa fa-times-circle-o" aria-hidden="true" routerLink="/patient-login"></i></div>
+      <h1>Doctor Register</h1>
+      <h6>Please fill in this form to create an account</h6>
+      <hr>
+      <div class="container">
+          <div class="article">
+
+            <div class="image">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Upload Image</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input ngModel required placeholder="Enter your Image"
+                        class="form-control" type="text" #t_doctorImage="ngModel" name="doctorImage" id="doctorImage">
+                    </div>
+                  </div>
+            </div>
+              <div class="form-group">
+                  <input ngModel required minlength="3" pattern="[a-zA-z\s]+" placeholder="Enter Full Name"
+                      class="form-control" type="text" #t_doctorName="ngModel" name="doctorName" id="doctorName"
+                      [class.is-invalid]="t_doctorName.invalid && t_doctorName.touched"
+                      [class.is-valid]="t_doctorName.valid">
+                  <p *ngIf="t_doctorName.touched && t_doctorName.invalid" class="text-danger">
+                      <small *ngIf="t_doctorName.errors?.['required']" class="text-danger">Name is required</small>
+                      <small *ngIf="t_doctorName.errors?.['minlength']" class="text-danger">Name should have atleast
+                        3 characters</small>
+                      <small *ngIf="t_doctorName.errors?.['pattern']" class="text-danger">Name cannot contain
+                          special characters</small>
+                  </p>
+              </div>
+              <div class="gender-details">
+                  <input type="radio" ngModel name="doctorGender" value="Male" id="dot-1">
+                  <input type="radio" ngModel name="doctorGender" value="Female" id="dot-2">
+                  <input type="radio" ngModel name="doctorGender" value="other" id="dot-3">
+                  <div class="category">
+                      <label for="dot-1">
+                          <span class="dot one"></span>
+                          <span class="gender">Male</span>
+                      </label>
+                      <label for="dot-2">
+                          <span class="dot two"></span>
+                          <span class="gender">Female</span>
+                      </label>
+                      <label for="dot-3">
+                          <span class="dot three"></span>
+                          <span class="gender">Other</span>
+                      </label>
+                  </div>
+              </div>
+              <div class="form-group">
+                  <input ngModel required min="0" class="form-control" placeholder="Enter Age" type="number"
+                      #t_doctorAge="ngModel" name="doctorAge" id="doctorAge"
+                      [class.is-invalid]="t_doctorAge.invalid && t_doctorAge.touched"
+                      [class.is-valid]="t_doctorAge.valid">
+                  <p *ngIf="t_doctorAge.touched && t_doctorAge.invalid" class="text-danger">
+                      <small *ngIf="t_doctorAge.errors?.['required']" class="text-danger">Age is required</small>
+                      <small *ngIf="t_doctorAge.errors?.['min']" class="text-danger">Age should be greater than
+                          0</small>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <input ngModel required email class="form-control" placeholder="Enter Email Id" type="email"
+                      #t_doctorEmail="ngModel" name="doctorEmail" id="doctorEmail"
+                      [class.is-invalid]="t_doctorEmail.invalid && t_doctorEmail.touched"
+                      [class.is-valid]="t_doctorEmail.valid">
+                  <p *ngIf="t_doctorEmail.touched && t_doctorEmail.invalid" class="text-danger">
+                      <small *ngIf="t_doctorEmail.errors?.['required']" class="text-danger">Email required</small>
+                      <small *ngIf="t_doctorEmail.errors?.['email']" class="text-danger">Invalid rmail</small>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <input ngModel required class="form-control" placeholder="Enter Address" type="text"
+                      #t_doctorAddress="ngModel" name="doctorAddress" id="doctorAddress"
+                      [class.is-invalid]="t_doctorAddress.invalid && t_doctorAddress.touched"
+                      [class.is-valid]="t_doctorAddress.valid">
+                  <p *ngIf="t_doctorAddress.touched && t_doctorAddress.invalid" class="text-danger">
+                      <small *ngIf="t_doctorAddress.errors?.['required']" class="text-danger">Address is
+                          required</small>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <input ngModel required maxlength="10" pattern="\d{10}" placeholder="Enter Mobile Number"
+                      class="form-control" type="number" #t_doctorPhone="ngModel" name="doctorPhone" id="doctorPhone"
+                      [class.is-invalid]="t_doctorPhone.invalid && t_doctorPhone.touched"
+                      [class.is-valid]="t_doctorPhone.valid">
+                  <p *ngIf="t_doctorPhone.touched && t_doctorPhone.invalid" class="text-danger">
+                      <small *ngIf="t_doctorPhone.errors?.['required']" class="text-danger">Phone number is
+                          required</small>
+                      <small *ngIf="t_doctorPhone.errors?.['maxlength']" class="text-danger">Phone number cannot
+                          exceed
+                          10
+                          digits</small>
+                      <small *ngIf="t_doctorPhone.errors?.['pattern']" class="text-danger">Invalid phone
+                          number</small>
+                  </p>
+              </div>
+             
+              <div class="form-group">
+                  <input ngModel required class="form-control" placeholder="Enter Qualification" type="text"
+                      #t_doctorQualification="ngModel" name="doctorQualification" id="doctorQualification"
+                      [class.is-invalid]="t_doctorQualification.invalid && t_doctorQualification.touched"
+                      [class.is-valid]="t_doctorQualification.valid">
+                  <p *ngIf="t_doctorQualification.touched && t_doctorQualification.invalid" class="text-danger">
+                      <small *ngIf="t_doctorQualification.errors?.['required']" class="text-danger">Qualification is
+                          required</small>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <input ngModel required class="form-control" placeholder="Enter Specialization" type="text"
+                      #t_doctorSpeciality="ngModel" name="doctorSpeciality" id="doctorSpeciality"
+                      [class.is-invalid]="t_doctorSpeciality.invalid && t_doctorSpeciality.touched"
+                      [class.is-valid]="t_doctorSpeciality.valid">
+                  <p *ngIf="t_doctorSpeciality.touched && t_doctorSpeciality.invalid" class="text-danger">
+                      <small *ngIf="t_doctorSpeciality.errors?.['required']" class="text-danger">Specialization is
+                          required</small>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <input ngModel required minlength="4" class="form-control" placeholder="Enter User Name" type="text"
+                      #t_doctorUsername="ngModel" name="doctorUsername" id="doctorUsername"
+                      [class.is-invalid]="t_doctorUsername.invalid && t_doctorUsername.touched"
+                      [class.is-valid]="t_doctorUsername.valid">
+                  <p *ngIf="t_doctorUsername.touched && t_doctorUsername.invalid" class="text-danger">
+                      <small *ngIf="t_doctorUsername.errors?.['required']" class="text-danger">Username is
+                          required</small>
+                      <small *ngIf="t_doctorUsername.errors?.['minlength']" class="text-danger">Username should have
+                          atleast 3
+                          characters</small>
+                  </p>
+              </div>
+              <div class="form-group">
+                  <input ngModel type="password" id="doctorPassword" name="doctorPassword"
+                      placeholder="Enter Password" class="form-control" required minlength="8"
+                      #t_doctorPassword="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                      title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                      [class.is-invalid]="t_doctorPassword.invalid && t_doctorPassword.touched"
+                      [class.is-valid]="t_doctorPassword.valid">
+                  <p *ngIf="t_doctorPassword.touched && t_doctorPassword.invalid" class="text-danger">
+                      <small *ngIf="t_doctorPassword.errors?.['required']" class="text-danger">Password is
+                          required</small>
+                      <small *ngIf="t_doctorPassword.errors?.['minlength']" class="text-danger">Password should have
+                          atleast 8
+                          characters</small>
+                      <small *ngIf="t_doctorPassword.errors?.['pattern']" class="text-danger">Invalid password</small>
+                  </p>
+              </div>
+              <button type="submit" [disabled]="doctorForm.invalid" class="btn btn-success">Register</button>
+             
+          </div>
+      </div>
+  </div>
+</form>
+
+
+
+

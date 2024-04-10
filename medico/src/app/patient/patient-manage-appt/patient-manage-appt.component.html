@@ -1,0 +1,50 @@
+
+<table class="table table-striped content-table">
+    <thead>
+      <tr>
+        <th scope="col">Doctor Id</th>
+        <th scope="col">User Id</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Disease</th>
+        <th scope="col">Treatment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of pres">
+        <td>{{i?.doctorId}}</td>
+        <td>{{i?.userId}}</td>
+        <td>{{i?.userName}}</td>
+        <td>{{i?.disease}}</td>
+        <td>{{i?.prescription}}</td>
+        </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+
+
+
+    <!-- <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <th>Doctor Id</th>
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>Disease</th>
+                <th>Prescription</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{pres?.doctorId}}</td>
+                    <td>{{pres?.userId}}</td>
+                    <td>{{pres?.userName}}</td>
+                    <td>{{pres?.disease}}</td>
+                    <td>{{pres?.prescription}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div> -->

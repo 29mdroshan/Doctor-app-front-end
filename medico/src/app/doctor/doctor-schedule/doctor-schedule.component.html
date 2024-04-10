@@ -1,0 +1,75 @@
+<div class="container" id="outer">
+    <form (submit)="save(infoForm.value)" #infoForm="ngForm">
+        <br><div class="row">
+            <div class="col-25">
+                <label class="form-label" for="dId" >Doctor ID:</label>
+            </div>
+            <div class="col-75">
+                <input ngModel required class="form-control" type="number" name="doctorId" id="doctorId" #t_doctorId="ngModel"  placeholder="Doctor ID">
+                <p *ngIf="t_doctorId.invalid && t_doctorId.touched" class="text-danger">
+                    <small *ngIf="t_doctorId.errors?.['required']">ID Is Required</small>
+                  </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label class="form-label" for="date">Choose the date:</label>
+            </div>
+            <div class="col-75">
+                <input ngModel required class="form-control" min="2023-01-12" type="date" name="scheduleDate" id="scheduleDate" #t_scheduleDate="ngModel"  [min]="minDate">
+                <p *ngIf="t_scheduleDate.invalid && t_scheduleDate.touched" class="text-danger">
+                    <small *ngIf="t_scheduleDate.errors?.['required']">Date Is Required</small>
+                  </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label class="form-label" for="startTime">Choose the start time:</label>
+            </div>
+            <div class="col-75">
+                <input ngModel required class="form-control" name="startTime" id="startTime" type="time" #t_startTime="ngModel">
+                <p *ngIf="t_startTime.invalid && t_startTime.touched" class="text-danger">
+                    <small *ngIf="t_startTime.errors?.['required']">Start Time Is Required</small>
+                  </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label class="form-label" for="endTime">Choose the end time:</label>
+            </div>
+            <div class="col-75">
+                <input ngModel required class="form-control" type="time" name="endTime" id="endTime" #t_endTime="ngModel">
+                <p *ngIf="t_endTime.invalid && t_endTime.touched" class="text-danger">
+                    <small *ngIf="t_endTime.errors?.['required']">End Time Is Required</small>
+                  </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label class="form-label" for="slots">Select the slot:</label>
+            </div>
+            <div class="col-75">
+                <select required type="time" ngModel class="form-control" name="slots" id="slots" #t_slots="ngModel">
+                    <option value="">--select--</option>
+                    <option>10</option>
+                    <option>15</option>
+                    <option>30</option>
+                </select>
+                <p *ngIf="t_slots.invalid && t_slots.touched" class="text-danger">
+                    <small *ngIf="t_slots.errors?.['required']">Please select a slot</small>
+                  </p>
+            </div>
+        </div><br>
+        <div class="text-center">
+            <button class="btn btn-success">save</button>
+        </div><br>
+    </form>
+  
+</div>
+
+
+
+
+
+
+

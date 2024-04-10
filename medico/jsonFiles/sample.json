@@ -1,0 +1,34 @@
+{
+  "sample": [
+    {
+      "doctorName": "sam",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/95/51/80/1000_F_295518052_aO5d9CqRhPnjlNDTRDjKLZHNftqfsxzI.jpg",
+      "id": 3
+    },
+    {
+      "doctorName": "vishal",
+      "image": "https://as1.ftcdn.net/v2/jpg/02/95/51/80/1000_F_295518052_aO5d9CqRhPnjlNDTRDjKLZHNftqfsxzI.jpg",
+      "id": 4
+    },
+    {
+      "doctorName": "roshan",
+      "image": "https://as2.ftcdn.net/v2/jpg/03/20/52/31/1000_F_320523164_tx7Rdd7I2XDTvvKfz2oRuRpKOPE5z0ni.jpg",
+      "id": 5
+    },
+    {
+      "doctorName": "fiza",
+      "image": "https://as2.ftcdn.net/v2/jpg/02/20/30/45/1000_F_220304581_3BRbk3UhoYrcVlt72fdBcVRHBtHAKuvD.jpg",
+      "id": 6
+    },
+    {
+      "doctorName": "yashavanth",
+      "image": "https://as2.ftcdn.net/v2/jpg/02/60/04/09/1000_F_260040900_oO6YW1sHTnKxby4GcjCvtypUCWjnQRg5.jpg",
+      "id": 7
+    },
+    {
+      "doctorName": "",
+      "image": "",
+      "id": 8
+    }
+  ]
+}

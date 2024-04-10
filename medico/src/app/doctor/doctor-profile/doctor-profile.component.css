@@ -1,0 +1,38 @@
+.container {
+    padding: 5%;
+  }
+  .container .img {
+    text-align: center;
+  }
+  .img-rounded {
+    border-radius: 5%;
+    width: 70%;
+    height: 100%;
+  }
+  .container .details {
+    border-left: 3px solid #DED4DA;
+    border-left: 2px groove rgb(163, 240, 214);
+  }
+  .container .details p {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .container button{
+    float: right;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
